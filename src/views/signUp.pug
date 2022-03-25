@@ -1,0 +1,28 @@
+html
+  head
+    title Sign up
+    link(rel="stylesheet", href="styles/sign.css")
+  body
+    .wrapper
+      form.form#signUpForm
+        select(required).form__select.select#role
+          option(disabled selected).select__option Select role
+          option(value='Guest').select__option Guest
+          option(value='User').select__option User
+          option(value='Supervisor').select__option Supervisor
+          option(value='Admin').select__option Admin
+        label Email
+          input(type="email" placeholder="email" required).form__input#email
+        label Password
+          input(type="password" placeholder="password" required).form__input#password
+        label Confirm password
+          input(type="password" placeholder="confirm password" required).form__input#passwordConfirmation
+        p Already have an account?
+          a(href="/login")  Sign in.
+        if (errorMessage)
+          p#errorMessage #{ errorMessage }
+        else
+          p#errorMessage
+        button(type="submit").form__button#submit Sign up
+
+  script(src="scripts/signUp.js" type="text/javascript")

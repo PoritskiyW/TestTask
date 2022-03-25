@@ -1,0 +1,31 @@
+html
+  head
+    title Main
+    link(rel="stylesheet", href="styles/main.css")
+  body
+    header.tabs
+      input(type="button" value="Guest").tabs__button#guestButton
+      input(type="button" value="User").tabs__button#userButton
+      input(type="button" value="Supervisor").tabs__button#supervisorButton
+      input(type="button" value="Admin").tabs__button#adminButton
+    section.tabcontent#guest
+      if (accessLevel >= 1)
+        p You have access to guest role
+      else
+        p Access denied!
+    section.tabcontent#user
+      if (accessLevel >= 2)
+        p You have access to user role
+      else
+        p Access denied!
+    section.tabcontent#supervisor
+      if (accessLevel >= 3)
+        p You have access to supervisor role
+      else
+        p Access denied!
+    section.tabcontent#admin
+      if (accessLevel >= 4)
+        p You have access to admin role
+      else
+        p Access denied!
+    script(src="scripts/main.js")

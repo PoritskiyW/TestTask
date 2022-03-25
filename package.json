@@ -1,0 +1,31 @@
+{
+  "name": "tensionx-backend-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.ts",
+  "scripts": {
+    "start": "node ./dist/server.js",
+    "build": "yarn clean && tsc && yarn copy-files",
+    "clean": "rimraf dist",
+    "copy-files": "copyfiles -f src/views/**/*.pug dist/views",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "https://github.com/PoritskiyW/",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "5.0.1",
+    "body-parser": "1.19.2",
+    "cookie-parser": "1.4.6",
+    "express": "4.17.3",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "4.17.21",
+    "mysql2": "2.3.3",
+    "pug": "3.0.2"
+  },
+  "devDependencies": {
+    "@types/mysql": "2.15.21",
+    "copyfiles": "2.4.1",
+    "rimraf": "3.0.2",
+    "typescript": "4.6.2"
+  }
+}

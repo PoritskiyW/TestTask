@@ -1,0 +1,20 @@
+html
+  head
+    title Sign in
+    link(rel="stylesheet", href="styles/sign.css")
+  body
+    .wrapper
+      form.form#signInForm
+        label Email
+          input(type="email" placeholder="email" required).form__input#email
+        label Password
+          input(type="password" placeholder="password" required).form__input#password
+        p Don't have account yet?
+          a(href="/register")  Sign up.
+        if (errorMessage)
+          p#errorMessage #{ errorMessage }
+        else
+          p#errorMessage
+        button(type="submit").form__button Sign in
+
+  script(src="scripts/signIn.js" type="text/javascript")
